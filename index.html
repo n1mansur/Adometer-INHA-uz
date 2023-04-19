@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="title">Цыфры и факты</h1>
+      <hr />
+      <h3 class="subtitle">Универстет Инха в Ташкенте - это...</h3>
+      <div class="hero">
+        <div class="col1">
+          <h4 class="num" data-val="4">0</h4>
+          <span
+            >факультет <br />
+            на бакалавре</span
+          >
+        </div>
+        <div class="col2">
+          <h4 class="num" data-val="1608">1608</h4>
+          <span>студентов бакалавра</span>
+        </div>
+        <div class="col3">
+          <h4 class="num" data-val="1">1</h4>
+          <span
+            >факультет <br />
+            на MBA</span
+          >
+        </div>
+        <div class="col4">
+          <h4 class="num" data-val="19">19</h4>
+          <span
+            >студентов <br />
+            магистратуры</span
+          >
+        </div>
+        <div class="col5">
+          <h4 class="num" data-val="9">9</h4>
+          <span
+            >студентов <br />
+            иностранцев</span
+          >
+        </div>
+        <div class="col6">
+          <h4 class="num" data-val="913">913</h4>
+          <span>выпускников</span>
+        </div>
+        <div class="col7">
+          <h4 class="num" data-val="56">56</h4>
+          <span
+            >местных профессоров- <br />
+            преподавателей</span
+          >
+        </div>
+        <div class="col8">
+          <h4 class="num" data-val="1">1</h4>
+          <span>общежитие</span>
+        </div>
+        <div class="col9">
+          <h4 class="num" data-val="2">2</h4>
+          <span>корпуса</span>
+        </div>
+        <div class="col10">
+          <h4 class="num" data-val="211">~211</h4>
+          <span
+            >слушателей <br />
+            подготовительных курсов</span
+          >
+        </div>
+        <div class="col11">
+          <h4 class="num" data-val="17">17</h4>
+          <span
+            >иностранный профессоров- <br />
+            преподавателей</span
+          >
+        </div>
+        <div class="col12">
+          <h4 class="num" data-val="11">11</h4>
+          <span
+            >преподавателей подготовительных <br />
+            курсов при инха</span
+          >
+        </div>
+      </div>
+    </div>
+    <script>
+      let valueDisplays = document.querySelectorAll('.num')
+      let interval = 2000
+      valueDisplays.forEach((valueDisplay) => {
+        let startValue = 0
+        let endValue = parseInt(valueDisplay.getAttribute('data-val'))
+        let duration = Math.floor(interval / endValue)
+        let counter = setInterval(() => {
+          startValue += 1
+          valueDisplay.textContent = startValue
+          if (startValue == endValue) {
+            clearInterval(counter)
+          }
+        }, duration)
+      })
+    </script>
+  </body>
+</html>
